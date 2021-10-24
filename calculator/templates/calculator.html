@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="result" method="POST">
+	{% csrf_token %}
+	<label for="num1">NUM1:<input type="text" name="txt1"></label><br>
+	<label for="num2">NUM2:<input type="text" name="txt2"></label><br>
+	<input type="submit" name="btn1" value="+">
+	<input type="submit" name="btn1" value="-">
+	<input type="submit" name="btn1" value="*">
+	<input type="submit" name="btn1" value="/">
+	<input type="submit" name="btn1" value="%"><br>
+	<br>
+	<br>
+
+	<label for="result">RESULT:<input type="text" name="txt3" value={{msg}}></label><br>
+</form>
+</body>
+</html>

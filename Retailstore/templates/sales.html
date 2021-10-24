@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div5{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+	</style>
+</head>
+<body>
+<div id="div5">
+	<h1>Adding Sales</h1>
+	<form  action="addsales" method="POST">
+	{% csrf_token %}
+	<table border="1">
+		<tr>
+			<th>Customer Name</th>
+			<td><input type="text" name="csname"></td>
+		</tr>
+		<tr>
+			<th>Contact</th>
+			<td><input type="text" name="cnct"></td>
+		</tr>
+		<tr>
+			<th>Date</th>
+			<td><input type="date" name="dt"></td>
+		</tr>
+		<tr>
+			<th>Total Price</th>
+			<td><input type="text" name="tp"></td>
+		</tr>
+		<center><tr>
+			<td><input type="submit" value="Add"></td>
+		</tr></center>
+		</table>
+		{{msg1a}}
+		{{msg2a}}
+</form>
+</div>
+
+</body>
+</html>

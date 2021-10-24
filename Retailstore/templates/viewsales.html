@@ -1,0 +1,64 @@
+><!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	
+	
+	table.b{
+	table-layout:fixed;
+	
+	
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+	</style>
+</head>
+<body>
+<div id="div">
+	<h1>Cart</h1>
+	<form action="displaysales" method="POST">
+		<table border="1">
+		{% csrf_token %}
+		<tr>
+			
+			<th>Customer Name</th>
+			<th>Contact</th>
+			<th>Date</th>
+			<th>Total Price</th>
+			
+		</tr>
+		{% for i in sllist %}
+	<tr>
+		
+		<td>{{i.Customer_Name}}</td>
+		<td>{{i.Contact}}</td>
+		<td>{{i.Date}}</td>
+		<td>{{i.Total}}</td>
+		
+	</tr>
+	{% endfor %}
+		<tr>
+			<th><input type="submit" name="display"></th>
+		</tr>
+		{{msg1a1}}
+		{{msg2a2}}
+		</table>
+	</form>
+</div>
+</body>
+</html>

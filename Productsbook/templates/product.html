@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>Adding Products</h1>
+<form action="addproduct" method="POST">
+	{% csrf_token %}
+	<table border="1" class="b">
+		<tr>
+			<th>Product Name</th>
+			<td><input type="text" name="Prdtname"></td>
+		</tr>
+		
+			<th>Category</th>
+			<td><input type="text" name="cmpny"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td><input type="text" name="price"></td>
+		</tr>
+		<tr>
+			<th>image</th>
+			<td><input type="file" name="stock"></td>
+		</tr>
+	
+		<tr>
+			<td><input type="submit" value="Add"></td>
+		</tr>
+		</table>
+		{{msg1}}
+		{{msg2}}
+</form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div7{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+	</style>
+</head>
+<body>
+<div id="div7">
+	<h1>Cart</h1>
+	<form action="displaycart" method="POST">
+		<table border="1">
+		{% csrf_token %}
+		<tr>
+			<th>Product</th>
+			<th>Type</th>
+			<th>Company</th>
+			<th>Quantity</th>
+			<th>Price</th>
+		</tr>
+		{% for i in cslist %}
+	<tr>
+		
+		<td>{{i.Product_Name}}</td>
+		<td>{{i.Type}}</td>
+		<td>{{i.Company}}</td>
+		<td>{{i.Quantity}}</td>
+		<td>{{i.Price}}</td>
+	</tr>
+	{% endfor %}
+		<tr>
+			<th><input type="submit" name="display"></th>
+		</tr>
+		{{msg1a1}}
+		{{msg2a2}}
+		</table>
+	</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#div{
+		border: 2px black solid;
+		float: left;
+		background: grey;
+		height:280px;
+		max-width: 95;
+	}
+</style>
+</head>
+<body>
+
+	<div id="div"><h1>Welcome!........</h1>
+<form action="logout">
+
+<input type="submit" value="logout">	
+</form>
+
+</div>
+
+	<div id="div">
+		<H1>INSERTION</H1>
+<form  action="add" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	Address:<input type="text" name="txt2"><br>
+	<input type="submit" value="Add">
+	{{msg1}}
+	{{msg2}}
+</form>
+</div>
+
+
+<div id="div">
+	<H1>DISPLAY</H1>
+<form action="display" method="=POST">
+
+<table border="1">
+	<tr>
+		<td>Name</td><td>Address</td>
+	</tr>
+	{% for i in empdtls %}
+	<tr>
+		<td>{{i.Name}}</td><td>{{i.Address}}</td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+	<input type="submit" value="display">
+</form>
+</div>
+
+
+
+
+<div id="div">
+	<H1>DELETION</H1>
+	<form  action="delete" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	<input type="submit" value="delete">
+	{{msg12}}
+	{{msg123}}
+	</form>
+</div>
+
+
+
+<div id="div">
+	<h1>UPDATION</h1>
+	<form action="update" method="POST">
+		{% csrf_token %}
+		Name:<input type="text" name="txt1"><br>
+		Address:<input type="text" name="txt2"><br>
+		<input type="submit" value="update">
+		{{msg21}}
+		{{msg22}}
+	</form>
+	</div>
+</body>
+</html>

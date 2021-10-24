@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	#div{
+		border: 2px black solid;
+		float: left;
+		background: grey;
+		height:280px;
+		max-width: 95;
+	}
+</style>
+</head>
+
+{% block content %}
+<body bgcolor="white">
+<br>
+<br>	
+<div id="div">
+	<h3>Welcome</h3>
+	<H1>Add Contacts</H1>
+<right><div style="width:80%";>
+		
+<form  action="add" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	Phno:<input type="text" name="txt2"><br>
+	<input type="submit" value="Add">
+	{{msg}}
+	{{msg1}}
+	{{msg2}}
+</form>
+</div>
+</right>
+
+</div>
+
+<div id="div">
+	<h1>Update contacts</h1>
+<div style="width:80%";>
+	
+		<form action=" Nameupdation" method="POST">
+		{% csrf_token %}
+		Old Name:<input type="text" name="txt1"><br>
+		New Name:<input type="text" name="txt2"><br>
+		<input type="submit" value=" Nameupdation">
+		{{msg121}}
+		{{msg21}}
+		{{msg22}}
+	</form>
+	</div>
+	<br>
+	<br>
+	<div>
+	<form action="PhNoupdation" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	Phno:<input type="text" name="txt2"><br>
+	<input type="submit" value=" PhNoupdation">	
+	</form>
+
+</div>
+
+</div>
+<div id="div">
+	<H1>DELETION</H1>
+<div>
+	
+	<form  action="delete" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	<br>
+	<input type="submit" value="delete">
+
+	{{msg12}}
+	{{msg123}}
+</form>
+</div>
+</div>
+<div id="div">
+	<H1>DISPLAY</H1>
+<center><div style="width: 80%;">
+	
+<form action="display" method="=POST">
+
+<table border="1">
+	<tr>
+		<td>Name</td><td>Phno</td>
+	</tr>
+	{% for i in cntlist %}
+	<tr>
+		<td>{{i.Name}}</td><td>{{i.Phno}}</td>
+	</tr>
+	{% endfor %}
+</table>
+<br>
+	<input type="submit" value="display">
+</form>
+</div></center>
+</div>
+
+{% endblock %}
+</body>
+
+
+</html>

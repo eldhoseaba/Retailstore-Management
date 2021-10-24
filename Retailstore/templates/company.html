@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Company</title>
+	<style type="text/css">
+	#div3{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+	</style>
+</head>
+<body>
+<div id="div3">
+	<h1>Adding company</h1>
+<form  action="addcmpny" method="POST">
+	{% csrf_token %}
+	<table border="1">
+		<tr>
+			<th>Company</th>
+			<td><input type="text" name="cmpny"></td>
+		</tr>
+		<tr>
+			<th><input type="submit" value="Add"></th>
+		</tr>
+		
+	</table>
+	{{msgaa}}
+{{msgbb}}
+</form>
+</div>
+</body>
+</html>

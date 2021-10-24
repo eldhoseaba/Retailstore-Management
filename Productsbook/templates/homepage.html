@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<H1>DISPLAY</H1>
+<center><div style="width: 80%;">
+	
+<form action="search" method="=POST">
+
+<table border="1">
+	
+	<input type="button" name="search"></tr>
+	<tr>
+		<td>Name</td><td>Category</td><td>Price</td><td>Image</td>
+	</tr>
+	{% for i in allprods %}
+	<tr>
+		<td>{{i.Name}}</td><td>{{i.Category}}</td><td>{{i.Price}}</td><td>{{i.Image}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+</form>
+</body>
+</html>

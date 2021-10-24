@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	#div{
+		border: 2px black solid;
+		float: left;
+		background: grey;
+		height:280px;
+		max-width: 95;
+	}
+</style>
+</head>
+
+{% block content %}
+<body bgcolor="white">
+<br>
+<br>	
+<div id="div">
+	<h3>Welcome</h3>
+	<H1>Add expense</H1>
+<div style="width:80%";>
+		
+<form  action="add" method="POST">
+	{% csrf_token %}
+	Name:<input type="text" name="txt1"><br>
+	Amount:<input type="text" name="txt2"><br>
+	<input type="submit" value="Add">
+	
+</form>
+{{msg}}
+{{msg1}}
+{{msg2}}
+{{msg11}}
+</div>
+
+
+</div>
+
+<div id="div">
+	<h1>Update Balance</h1>
+<div style="width:80%";>
+	
+		<form action="update" method="POST">
+		{% csrf_token %}
+		Amount:<input type="text" name="txt1"><br>
+		<input type="submit" value="Update">
+		
+	</form>
+	{{msg12}}
+	{{msg123}}
+	</div>
+
+</div>
+
+<div id="div">
+	<H1>DISPLAY</H1>
+<center><div style="width: 80%;">
+	
+<form action="display" method="=POST">
+<h4>Expense table</h4>
+<table border="1">
+	<tr>
+		<td>Name</td><td>Amount</td>
+	</tr>
+	{% for i in explist %}
+	<tr>
+		<td>{{i.Name}}</td><td>{{i.Amount}}</td>
+	</tr>
+	{% endfor %}
+</table>
+<input type="submit" value="display">
+<br>
+</form>
+</div>
+</center>
+<div><center>
+<form action="display2">
+<h4>Balance table</h4>
+<table border="1">
+	<tr>
+		<td>Amount</td>
+	</tr>
+	<tr>
+		<td>{{bln.Amount}}</td>
+	</tr>
+</table>
+	<input type="submit" value="display">
+</form>
+</div></center>
+</div>
+
+{% endblock %}
+</body>
+
+
+</html>

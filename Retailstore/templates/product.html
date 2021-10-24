@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#div1{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	
+	
+	table.b{
+	table-layout:fixed;
+	
+	
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+</style>
+</head>
+<body>
+
+
+
+
+	<div id="div1">
+		<h1>Adding Products</h1>
+<form action="addproduct" method="POST">
+	{% csrf_token %}
+	<table border="1" class="b">
+		<tr>
+			<th>Product Name</th>
+			<td><input type="text" name="Prdtname"></td>
+		</tr>
+		<tr>
+			<th>Type</th>
+			<td><input type="text" name="types"></td></tr>
+		<tr>
+			<th>Company</th>
+			<td><input type="text" name="cmpny"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td><input type="text" name="price"></td>
+		</tr>
+		<tr>
+			<th>Stock</th>
+			<td><input type="text" name="stock"></td>
+		</tr>
+	
+		<tr>
+			<td><input type="submit" value="Add"></td>
+		</tr>
+		</table>
+		{{msg1}}
+		{{msg2}}
+</form>
+</div>
+</body>
+<a href="{%url 'addcompany'%}">Add Company</a>
+<a href="{%url 'viewproduct'%}">View Product</a>
+<a href="{%url 'addcustomer'%}">Add Customer</a>
+<a href="{%url 'sales'%}">Add Sales Details</a>
+<a href="{%url 'viewsales'%}">View Sales Details</a>
+<a href="{%url 'vieworder'%}">view Order</a>
+</html>

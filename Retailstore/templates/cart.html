@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	#div6{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}	
+
+	</style>
+</head>
+<body>
+<div id="div6">
+	<h1>Adding Cart Items</h1>
+	<form action="addcart" method="POST">
+	{% csrf_token %}
+	<table border="1">
+		<tr>
+			<th>Customer Name</th>
+			<td><input type="text" name="cstname"></td>
+		</tr>
+		<tr>
+			<th>Product</th>
+			<td><input type="text" name="pds"></td></tr>
+		<tr>
+			<th>Type</th>
+			<td><input type="text" name="tps"></td>
+		</tr>
+		<tr>
+			<th>Company</th>
+			<td><input type="text" name="cmpy"></td>
+		</tr>
+		<tr>
+			<th>Quantity</th>
+			<td><input type="text" name="qnt"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td><input type="text" name="prc"></td>
+		</tr>
+	
+		<tr>
+			<td><input type="submit" value="Add"></td>
+		</tr>
+		</table>
+		{{msga11}}
+		{{msga22}}
+</form>
+</div>
+<a href="{%url 'displaycart'%}">View Cart</a>
+</body>
+</html>

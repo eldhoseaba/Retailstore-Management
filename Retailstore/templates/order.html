@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#div4{
+		border: 2px black solid;
+		float: left;
+		background:orange;
+		height:280px;
+		max-width: 95;
+	}
+	h1
+	{
+		color:white;
+		text-align: center;
+		background:black;
+	}
+	table,th{
+		color: solid black;
+	}
+	</style>
+</head>
+<body>
+<div id="div4">
+	<h1>Order Products</h1>
+	<form action="addorder" method="POST">
+	{% csrf_token %}
+	<table border="1">
+		<tr>
+			<th>Customer Name</th>
+			<td><input type="text" name="csname"></td>
+		</tr>
+		<tr>
+			<th>Product</th>
+			<td><input type="text" name="ps"></td></tr>
+		<tr>
+			<th>Type</th>
+			<td><input type="text" name="tp"></td>
+		</tr>
+		<tr>
+			<th>Company</th>
+			<td><input type="text" name="cmp"></td>
+		</tr>
+		<tr>
+			<th>Quantity</th>
+			<td><input type="text" name="qn"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td><input type="text" name="pr"></td>
+		</tr>
+	
+		<tr>
+			<td><input type="submit" value="Add"></td>
+		</tr>
+		</table>
+		{{msga1}}
+		{{msga2}}
+</form>
+</div>
+<a href="{%url 'addcart'%}">Add Cart</a>
+</body>
+</html>
